@@ -1,23 +1,23 @@
 @if $ym-base-grids == true {
-
 	/**
 	* @section Grid Module
 	*/
-
 	.ym-grid {
 		display:table;
 		width:100%;
 		table-layout:fixed;
 		list-style-type: none;
-		padding-left:0;
-		padding-right:0;
-		margin-left:0;
-		margin-right:0;
+		padding: {
+			left:0;
+			right:0;
+		}
+		margin: {
+			left:0;
+			right:0;
+		}
 	}
-
 	.ym-gl { float:left; margin: 0; }
 	.ym-gr { float:right; margin: 0 0 0 $ym-rounding-tolerance; }
-
 	.ym-g20 { width:20%; }
 	.ym-g40 { width:40%; }
 	.ym-g60 { width:60%; }
@@ -29,22 +29,20 @@
 	.ym-g75 { width:75%; }
 	.ym-g38 { width:38.2%; }
 	.ym-g62 { width:61.8%; }
-
 	.ym-gbox { padding: 0 $ym-gbox-padding }
 	.ym-gbox-left { padding: 0 $ym-gbox-padding 0 0 }
 	.ym-gbox-right { padding: 0 0 0 $ym-gbox-padding }
-
-	.ym-equalize { overflow:hidden; }
-
-	.ym-equalize > [class*="ym-g"] {
-		display:table-cell;
-		float:none;
-		margin:0;
-		vertical-align:top;
-	}
-
-	.ym-equalize > [class*="ym-g"] > [class*="ym-gbox"] {
-		padding-bottom: 10000px;
-		margin-bottom: -10000px
+	.ym-equalize {
+		overflow:hidden;
+		> [class*="ym-g"] {
+			display:table-cell;
+			float:none;
+			margin:0;
+			vertical-align:top;
+			> [class*="ym-gbox"] {
+				padding-bottom: 10000px;
+				margin-bottom: -10000px
+			}
+		}
 	}
 }

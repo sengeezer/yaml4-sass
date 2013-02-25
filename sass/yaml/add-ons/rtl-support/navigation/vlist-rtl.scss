@@ -1,10 +1,9 @@
 //
 // "Yet Another Multicolumn Layout" - YAML CSS Framework
 //
-// (en) Vertical RTL list navigation "vlist"
-// (de) Vertikale RTL-Navigationsliste "vlist"
+// Vertical RTL list-based navigation "vlist"
 //
-// @note:           Many thanks to Alexander Hass (http://www.yaml-fuer-drupal.de/) for contribution
+// @note:           Many thanks to Alexander Hass (http://www.yaml-fuer-drupal.de/) for contributions
 //
 // @copyright       Copyright 2005-2013, Dirk Jesse
 // @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
@@ -14,48 +13,47 @@
 //
 
 @media all {
-
-	/* menu title */
+	// menu title
 	.ym-vtitle {
-		padding-left: 0px;
-		padding-right: 10%;
+		padding: {
+			left: 0;
+			right: 10%;
+		}
 	}
-
 	.ym-vlist {
 		text-align: right;
-
-		li { float:right; }
-
-		/* Level 1 */
-		li a,
-		li strong,
-		li span {
-			padding-left: 0px;
-			padding-right: 10%;
-		}
-
-		/* Level 2 */
-		li ul li a,
-		li ul li strong,
-		li ul li span {
-			padding-left: 0px;
-			padding-right: 20%;
-		}
-
-		/* Level 3 */
-		li ul li ul li a,
-		li ul li ul li strong,
-		li ul li ul li span {
-			padding-left: 0px;
-			padding-right: 30%;
-		}
-
-		/* Level 4 */
-		li ul li ul li ul li a,
-		li ul li ul li ul li strong,
-		li ul li ul li ul li span {
-			padding-left: 0px;
-			padding-right: 40%;
+		li {
+			float:right;
+			a, strong, span {
+				padding: {
+					left: 0;
+					right: 10%;
+				}
+			}
+			ul li {
+				a, strong, span {
+					padding: {
+						left: 0;
+						right: 20%;
+					}
+				}
+				ul li {
+					a, strong, span {
+						padding: {
+							left: 0;
+							right: 30%;
+						}
+					}
+					ul li {
+						a, strong, span {
+							padding: {
+								left: 0px;
+								right: 40%;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

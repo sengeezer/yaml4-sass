@@ -1,11 +1,10 @@
 /**
  *  "Yet Another Multicolumn Layout" - YAML CSS Framework
- *  (en) YAML core stylesheet
- *  (de) YAML Basis-Stylesheet
+ *  YAML core stylesheet
 */
 //
 // Don't make any changes in this file!
-// Your changes should be placed in any css-file in your own stylesheet folder.
+// Your changes should be placed in a CSS file in your own stylesheet folder.
 //
 // @copyright       Copyright 2005-2013, Dirk Jesse
 // @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
@@ -24,6 +23,4 @@
 			"base-modules/accessibility";
 }
 
-@media print {
-	@import "base-modules/print-core";
-}
+@media print { @import "base-modules/print-core"; }

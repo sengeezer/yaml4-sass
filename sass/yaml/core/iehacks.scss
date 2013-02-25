@@ -1,7 +1,6 @@
 /**
  * "Yet Another Multicolumn Layout" - YAML CSS Framework
- * (en) YAML core stylesheet - structure-independent bugfixes of IE/Win CSS-bugs
- * (de) YAML Basis-Stylesheet - Strukturunabhängige Bugfixes von CSS-Bugs des IE/Win
+ * YAML core stylesheet - structure-independent bugfixes of IE/Win CSS-bugs
  */
 // * Don't make any changes in this file!
 // *
@@ -13,10 +12,8 @@
 // */
 
 @media all {
-
 	/**
-	* (en) Debugging:When you see a green background, IE is getting this stylesheet
-	* (de) Fehlersuche:Hintergrund leuchtet grün, wenn das Stylesheet korrekt geladen wurde
+	* (en) Debugging: When you see a green background, IE is getting this stylesheet
 	*
 	* @debug
 	* @app-yaml-default disabled
@@ -33,11 +30,8 @@
 	* @valid     no
 	*/
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* (en) No need to force scrollbars in older IE's - it even makes problems in IE6 when set
-	* (de) Scrollbar-Fix wird in alten IE's nicht benötigt, zudem verursacht der Fix Probleme im IE6
+	* No need to force scrollbars in older IEs - it even causes problems in IE6 when set
 	*
 	* @workaround
 	* @affected  IE6, IE7
@@ -48,36 +42,26 @@
 	body { o\verflow:visible; }
 
 	/**
-	* (en) HTML5 - default media element styles
-	* (de) HTML5 - Standard Eigenschaften für Media-Elemente
+	* HTML5 - default media element styles
 	*/
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, nav, section { zoom:1; }
 
-	article,aside,details,figcaption,figure,
-	footer,header,hgroup,nav,section {
-		zoom:1;
-	}
-
-	audio,
-	canvas,
-	video {
+	audio, canvas, video {
 		*display: inline;
 		*zoom: 1;
 	}
 
 	/**
-	* (en) enable bicubic interpolation of images on scaling
-	* (de) aktiviert bikubische Interpolation beim Skalieren von Bildern
+	* Enable bicubic interpolation of images on scaling
 	*/
 	img {
 		-ms-interpolation-mode: bicubic;
 		zoom: 1;
 	}
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* (en) Fixes IE5.x and IE6 overflow behavior of textarea and input elements elements
-	* (de) Korrigiert das fehlerhafte overflow-Verhalten von textarea und input-Elementen
+	* Fixes IE5.x and IE6 overflow behavior of textarea and input elements elements
 	*
 	* @workaround
 	* @affected  IE 5.x/Win, IE6
@@ -85,17 +69,14 @@
 	* @valid     no
 	*/
 
-	* html iframe,
-	* html frame { overflow:auto; }
-	* html input,
-	* html frameset { overflow:hidden; }
-	* html textarea { overflow:scroll; overflow-x:hidden; }
-
-	/*------------------------------------------------------------------------------------------------------*/
+	* html {
+		iframe, frame { overflow:auto; }
+		input, frameset { overflow:hidden; }
+		textarea { overflow:scroll; overflow-x:hidden; }
+	}
 
 	/**
-	* (en) Stability fixes with 'position:relative'
-	* (de) Stabilitätsverbesserungen durch 'position:relative'
+	* Stability fixes for 'position:relative'
 	*
 	* Essential for correct scaling in IE7 (body). IE5 must get static positioned body instead.
 	* Helpful to fix several possible problems in older IE versions (#main).
@@ -109,11 +90,8 @@
 	body, #main { position:relative; }
 	* html body { position:static; }
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* (en) Clearfix adjustents for containing floats in IE
-	* (de) Clearfix-Anpassung für diverse IE-Versionen
+	* Clearfix adjustments for containing floats in IE
 	*
 	* @workaround
 	* @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
@@ -122,13 +100,10 @@
 	* @valid     yes
 	*/
 
-	.ym-clearfix { zoom:1; }	/* hasLayout aktivieren */
-
-	/*------------------------------------------------------------------------------------------------------*/
+	.ym-clearfix { zoom:1; }	/* activate hasLayout */
 
 	/**
-	* (en) Bugfix for partially displayed column separators
-	* (de) Bugfix für unvollständige Darstellung der Spalteninhalte / Spaltentrenner
+	* Fix for partially displayed column separators
 	*
 	* @bugfix
 	* @affected	 IE 5.x/Win, IE6
@@ -136,15 +111,12 @@
 	* @valid		 yes
 	*/
 
-	* html .ym-col1,
-	* html .ym-col2,
-	* html .ym-col3 { position:relative; }
-
-	/*------------------------------------------------------------------------------------------------------*/
+	* html {
+		.ym-col1, .ym-col2, .ym-col3 { position:relative; }
+	}
 
 	/**
-	* (en) Preventing several css bugs by forcing "hasLayout"
-	* (de) Vermeidung verschiedenster Bugs durch Erzwingen von "hasLayout"
+	* Preventing several css bugs by forcing "hasLayout"
 	*
 	* @workaround
 	* @affected  IE 5.x/Win, IE6, IE7
@@ -156,14 +128,11 @@
 	.ym-wrapper, .ym-wbox, #header, #nav, #main, #footer { zoom:1; }	/* IE6 & IE7	*/
 	* html .ym-wrapper, * html .ym-wbox { height:1%; hei\ght:auto; }	/* IE 5.x & IE6 | IE6 only */
 	* html #header, * html #nav, * html #main, * html #footer { width:100%; wid\th:auto; }	/* IE 5.x & IE6 | IE6 only */
-
-	/* trigger hasLayout to force containing content */
+	// trigger hasLayout to force containing content
 	.ym-gbox, .ym-gbox-left, .ym-gbox-right { height:1%; }
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* Disappearing List-Background Bug
+	* Disappearing list background bug
 	* @see http://www.positioniseverything.net/explorer/ie-listbug.html
 	*
 	* @bugfix
@@ -174,10 +143,8 @@
 
 	* html ul, * html ol, * html dl { position:relative; }
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* List-Numbering Bug
+	* List numbering Bug
 	*
 	* @bugfix
 	* @affected  IE 5.x/Win, IE6, IE7
@@ -187,10 +154,8 @@
 
 	body ol li { display:list-item; }
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* Browser-based image scaling (not)
+	* Browser based image scaling (not)
 	*
 	* @workaround
 	* @affected  IE 5.x/Win, IE6
@@ -198,12 +163,10 @@
 	* @valid     yes
 	*/
 
-	* html .flexible {
-		zoom: 1;
-	}
+	* html .flexible { zoom: 1; }
 
 	/**
-	* Form related bugfixes
+	* Form related fixes
 	*
 	* @bugfix
 	* @affected  IE 5.x/Win, IE6, IE7
@@ -213,13 +176,10 @@
 
 	button, input { *overflow: visible; }
 	table button, table input { *overflow: auto; }
-
 	fieldset, legend { position:relative; }
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* Global adjustments/fixes for YAML's form construction kit
+	* Global adjustments / fixes for YAML's form construction kit
 	*
 	* @workaround
 	* @affected  IE 5.x/Win, IE6, IE7
@@ -227,27 +187,18 @@
 	* @valid     no
 	*/
 
-	.ym-form,
-	.ym-form div,
-	.ym-form div * { zoom:1; }
+	.ym-form, .ym-form div, .ym-form div * { zoom:1; }
 
 	.ym-form {
-		// adjusted grid paddings for box-modell: content-box
-		.ym-g20,
-		.ym-g40,
-		.ym-g60,
-		.ym-g80,
-		.ym-g25,
-		.ym-g33,
-		.ym-g50,
-		.ym-g66,
-		.ym-g75,
-		.ym-g38,
-		.ym-g62 {
-			padding-left: 1%;
-			padding-right: 1%;
+		// adjusted grid paddings for box model: content-box
+		.ym-g20, .ym-g40, .ym-g60, .ym-g80,
+		.ym-g25, .ym-g33, .ym-g50, .ym-g66,
+		.ym-g75, .ym-g38, .ym-g62 {
+			padding: {
+				left: 1%;
+				right: 1%;
+			}
 		}
-
 		// adjusted grid widths for box-modell: content-box
 		.ym-g20 { width:16% !important; }
 		.ym-g40 { width:36% !important; }
@@ -260,7 +211,6 @@
 		.ym-g75 { width:71% !important; }
 		.ym-g38 { width:34.2% !important; }
 		.ym-g62 { width:57.8% !important; }
-
 		select {
 			&.ym-g20 { width:14% !important; }
 			&.ym-g40 { width:34% !important; }
@@ -276,18 +226,11 @@
 		}
 	}
 
-	/*------------------------------------------------------------------------------------------------------*/
-
 	/**
-	* (en) Workaround for 'collapsing margin at #col3' when using CSS-property clear
-	*		 Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and right column is the
-	*		 longest and left column is the shortest one. For IE6 and IE7 a special workaround was developed
-	*		 in YAML.
-	*
-	* (de) Workaround für 'kollabierenden Margin an #col3' bei Verwendung der CSS-Eigenschaft clear
-	*		 Der linke Margin von #col3 kollabiert bei der Verwendung von clear:both im 1-3-2 (oder 2-3-1) Layout
-	*		 wenn gleichzeitig die linke Spalte die kürzeste und die rechte die längste ist. Im IE6 und IE7 lässt
-	*		 sich der Bug durch eine speziell für YAML entwickelten Workaround umgehen.
+	* (en) Workaround for 'collapsing margin at #col3' when using clear property
+	*	Left margin of #col3 collapses when using clear:both in 1-3-2 (or 2-3-1) layout and the right column is the
+	*	longest and left column is the shortest. For IE6 and IE7, a special workaround was developed
+	*	in YAML.
 	*
 	* @workaround
 	* @affected  IE 5.x/Win, IE6, IE7
@@ -296,16 +239,11 @@
 	*/
 
 	html .ym-ie-clearing {
-		/* (en) Only a small help for debugging */
-		/* (de) Nur eine kleine Hilfe zur Fehlersuche */
+		// A small help for debugging
 		position:static;
-
-		/* (en) Make container visible in IE */
-		/* (de) Container sichtbar machen im IE */
+		// Make container visible in IE
 		display:block;
-
-		/* (en) No fix possible in IE5.x, normal clearing used instead */
-		/* (de) Kein Fix im IE5.x möglich, daher normales Clearing */
+		/* No fix possible in IE5.x, normal clearing used instead */
 		\clear:both;
 
 		/* (en) forcing clearing-like behavior with a simple oversized container in IE6 & IE7*/

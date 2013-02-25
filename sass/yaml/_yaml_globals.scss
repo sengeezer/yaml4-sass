@@ -1,11 +1,9 @@
-////////////////////////////////////////////////////////////////////
-//
-// YAML Core
-//
-////////////////////////////////////////////////////////////////////
+/* 
+|
+| YAML Core
+_________________ */
 
 // Disable/Enable Core Modules
-// ---------------------------------
 $ym-base-normalization	: true;
 $ym-base-floathandling	: true;
 $ym-base-columns		: true;
@@ -15,35 +13,27 @@ $ym-base-accessibility	: true;
 $ym-base-print			: true;
 
 // Config: Columns Module
-// ---------------------------------
 $ym-column-width		: 20%;
 $ym-cbox-padding		: 10px;
 
 // Config: Grids Module
-// ---------------------------------
 $ym-rounding-tolerance	: -5px;
 $ym-gbox-padding		: 10px;
 
 // Config: Print Module
-// ---------------------------------
 $ym-print-fontsize		: 10pt;
 $ym-print-abbreviation	: false;
 $ym-print-href			: false;
 
-////////////////////////////////////////////////////////////////////
-//
 // Typography Module
-//
-////////////////////////////////////////////////////////////////////
 
 // Font Settings
-// ---------------------------------
-$ym-font-sans				: "Droid Sans", Arial, Helvetica, sans-serif;
-$ym-font-serif				: "Droid Serif", Georgia, "Times New Roman", Times, serif;
-$ym-font-monospace			: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+$ym-font-sans		: "Droid Sans", Arial, Helvetica, sans-serif;
+$ym-font-serif		: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+$ym-font-monospace	: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
 
 // Color Settings
-// ---------------------------------
+
 // standard typography colors
 $ym-text-color				: #444;
 $ym-headings-color			: #161e21;
@@ -72,20 +62,20 @@ $ym-highlight-text-color	: #c30;
 $ym-dimmed-text-color		: #888;
 
 // Vertical Rhythm
-// ---------------------------------------------------
-// font values have to be defined in [px] without unit
-$ym-default-font-size		: 16;
-$ym-base-font-size			: 14;
-$ym-base-line-height		: 21;
 
-$ym-h1-font-size			: 48;
-$ym-h2-font-size			: 32;
-$ym-h3-font-size			: 24;
-$ym-h4-font-size			: 21;
-$ym-h5-font-size			: 18;
-$ym-h6-font-size			: 14;
-$ym-text-big-font-size		: 16;
-$ym-text-small-font-size	: 12;
+// font values have to be defined in [px] without unit
+$ym-default-font-size	 : 16;
+$ym-base-font-size		 : 14;
+$ym-base-line-height	 : 21;
+
+$ym-h1-font-size		 : 48;
+$ym-h2-font-size		 : 32;
+$ym-h3-font-size		 : 24;
+$ym-h4-font-size		 : 21;
+$ym-h5-font-size		 : 18;
+$ym-h6-font-size		 : 14;
+$ym-text-big-font-size	 : 16;
+$ym-text-small-font-size : 12;
 
 // scale factors (don't change - unless you know what you do)
 $line-height				: $ym-base-line-height / $ym-base-font-size;
