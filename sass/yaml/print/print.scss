@@ -12,51 +12,30 @@
 @import "yaml/yaml_globals";
 
 @media print {
-
 	/**
 	* @section basic layout preparation
 	*/
 
-	/* (en) change font size unit to [pt] - avoids problems with [px] in Gecko based browsers  	*/
-	/* (de) Wechsel der der Schriftgrößen-Maßheinheit zu [pt] - Probleme mit [px] in Gecko-Browsern vermeiden */
+	/* Change font size unit to [pt], avoids problems with [px] in Gecko based browsers	*/
 	body {
 		font-size: $ym-print-fontsize;
 		padding: 0 5px;
 	}
+	// Hide unneeded screenlayout container in print layout
+	nav, .ym-searchform { display:none; }
 
-	/* (en) Hide unneeded container of the screenlayout in print layout */
-	/* (de) Für den Druck nicht benötigte Container des Layouts abschalten */
-	nav,
-	.ym-searchform {
-		display:none;
-	}
-
-	/*------------------------------------------------------------------------------------------------------*/
-
-	/* (en) Avoid page breaks right after headings */
-	/* (de) Vermeidung von Seitenumbrüchen direkt nach einer Überschrift */
-	h1,h2,h3,h4,h5,h6 {
-		page-break-after:avoid;
-	}
+	// Avoid page breaks right after headings
+	h1,h2,h3,h4,h5,h6 { page-break-after:avoid; }
 
 	@if $ym-print-abbreviation == true {
-	/*------------------------------------------------------------------------------------------------------*/
-
-	/* (en) optional output of acronyms and abbreviations*/
-	/* (de) optionale Ausgabe von Auszeichnung von Abkürzungen */
-
-		abbr[title]:after,
-		acronym[title]:after {
-			content:'(' attr(title) ')';
+	// Optional output of acronyms and abbreviations
+		abbr[title], acronym[title] {
+			&:after { content:'(' attr(title) ')'; }
 		}
 	}
 
 	@if $ym-print-href == true {
-	/*------------------------------------------------------------------------------------------------------*/
-
-	/* (en) optional URL output of hyperlinks in print layout */
-	/* (de) optionale Ausgabe der URLs von Hyperlinks */
-
+	// Optional URL output of links in print layout
 		a[href]:after {
 			content:" <URL:"attr(href)">";
 			color:#444;

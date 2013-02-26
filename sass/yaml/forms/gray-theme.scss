@@ -9,6 +9,7 @@
 // */
 
 @import "yaml/mixins/yaml_mixins_core";
+@import "compass/css3";
 
 @media screen and (min-width: 0){
 	/**
@@ -29,8 +30,8 @@
 			width: 60%;
 		}
 	}
-	.ym-columnar label { @include ym-box-sizing(border-box); }
 	.ym-columnar {
+		label { @include ym-box-sizing(border-box); }
 		.ym-fbox-select select { width: 68%; }
 		.ym-fbox-text {
 			input, textarea { width:68%; }
@@ -185,16 +186,11 @@
 		display: inline-block;
 		white-space: nowrap;
 		background-color: #ccc;
-		background-image: -webkit-linear-gradient(top, #eee, #ccc);
-		background-image: -moz-linear-gradient(top, #eee, #ccc);
-		background-image: -ms-linear-gradient(top, #eee, #ccc);
-		background-image: -o-linear-gradient(top, #eee, #ccc);
-		background-image: linear-gradient(to bottom, #eee, #ccc);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+		@include background-image(linear-gradient(top, #eee, #ccc));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eee', EndColorStr='#ccc');
 		border: 1px solid #777;
-		border-radius: .2em;
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15);
+		@include border-radius(.2em);
+		@include box-shadow(0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.15));
 		color: #333 !important;
 		cursor: pointer;
 		font: normal 1em/2em Arial, Helvetica;
@@ -202,26 +198,17 @@
 		padding: 0 1.5em;
 		overflow: visible; /* removes extra side spacing in IE */
 		text-decoration: none !important;
-		text-shadow: 0 1px 0 rgba(255,255,255,.8);
-
+		@include text-shadow(0 1px 0 rgba(255,255,255,.8));
 		&:hover{
 			background-color: #ddd;
-			background-image: -webkit-linear-gradient(top, #fafafa, #ddd);
-			background-image: -moz-linear-gradient(top, #fafafa, #ddd);
-			background-image: -ms-linear-gradient(top, #fafafa, #ddd);
-			background-image: -o-linear-gradient(top, #fafafa, #ddd);
-			background-image: linear-gradient(to bottom, #fafafa, #ddd);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+			@include background-image(linear-gradient(top, #fafafa, #ddd));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#ddd');
 		}
 		&:active {
 			background-color: #bbb;
-			background-image: -webkit-linear-gradient(top, #ccc, #bbb);
-			background-image: -moz-linear-gradient(top, #ccc, #bbb);
-			background-image: -ms-linear-gradient(top, #ccc, #bbb);
-			background-image: -o-linear-gradient(top, #ccc, #bbb);
-			background-image: linear-gradient(to bottom, #ccc, #bbb);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cccccc', EndColorStr='#bbbbbb');
-			box-shadow: 2px 2px 3px rgba(0,0,0,.2) inset;
+			@include background-image(linear-gradient(top, #ccc, #bbb));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccc', EndColorStr='#bbb');
+			@include box-shadow(2px 2px 3px rgba(0,0,0,.2) inset);
 			position: relative;
 			top: 1px;
 		}
@@ -230,7 +217,6 @@
 			background: #fafafa;
 		}
 	}
-
 	/* Button size-scaling classes */
 	.ym-button {
 		&.ym-xlarge { font-size: 1.5em; } /* 21px */
@@ -240,47 +226,29 @@
 	}
 
 	/* Button color scheme: primary */
-
 	.ym-button.ym-primary,
 	.ym-form button.ym-primary,
 	.ym-form input[type="button"].ym-primary,
 	.ym-form input[type="reset"].ym-primary,
 	.ym-form input[type="submit"].ym-primary {
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
+		@include box-shadow(0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15));
 		background-color: #66c;
-		background-image: -webkit-linear-gradient(top, #88e, #66c);
-		background-image: -moz-linear-gradient(top, #88e, #66c);
-		background-image: -ms-linear-gradient(top, #88e, #66c);
-		background-image: -o-linear-gradient(top, #88e, #66c);
-		background-image: linear-gradient(to bottom, #88e, #66c);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#8888ee', EndColorStr='#6666cc');
+		@include background-image(linear-gradient(top, #88e, #66c));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#88e', EndColorStr='#66c');
 		border: 1px solid #007;
 		color: #fff !important;
-		text-shadow: 0 1px 0 rgba(0,0,0,.8);
-
+		@include text-shadow(0 1px 0 rgba(0,0,0,.8));
 		&:hover {
 			background-color: #66d;
-			background-image: -webkit-linear-gradient(top, #88f, #66d);
-			background-image: -moz-linear-gradient(top, #88f, #66d);
-			background-image: -ms-linear-gradient(top, #88f, #66d);
-			background-image: -o-linear-gradient(top, #88f, #66d);
-			background-image: linear-gradient(to bottom, #88f, #66d);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#8888ff', EndColorStr='#6666dd');
+			@include background-image(linear-gradient(top, #88f, #66d));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#88f', EndColorStr='#66d');
 		}
-
 		&:active {
 			box-shadow: 2px 2px 3px rgba(0,0,0,.2) inset;
 			background-color: #66b;
-			background-image: -webkit-linear-gradient(top, #88c, #66a);
-			background-image: -moz-linear-gradient(top, #88c, #66a);
-			background-image: -ms-linear-gradient(top, #88c, #66a);
-			background-image: -o-linear-gradient(top, #88c, #66a);
-			background-image: linear-gradient(to bottom, #88c, #66a);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#8888cc', EndColorStr='#6666aa');
+			@include background-image(linear-gradient(top, #88c, #66a));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#88c', EndColorStr='#66a');
 		}
-
 		&:focus {
 			outline: 0;
 			background: #88f;
@@ -288,47 +256,29 @@
 	}
 
 	/* Button color scheme: success */
-
 	.ym-button.ym-success,
 	.ym-form button.ym-success,
 	.ym-form input[type="button"].ym-success,
 	.ym-form input[type="reset"].ym-success,
 	.ym-form input[type="submit"].ym-success {
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
+		@include box-shadow(0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15));
 		background-color: #494;
-		background-image: -webkit-linear-gradient(top, #6b6, #494);
-		background-image: -moz-linear-gradient(top, #6b6, #494);
-		background-image: -ms-linear-gradient(top, #6b6, #494);
-		background-image: -o-linear-gradient(top, #6b6, #494);
-		background-image: linear-gradient(to bottom, #6b6, #494);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#66bb66', EndColorStr='#449944');
+		@include background-image(linear-gradient(top, #6b6, #494));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#6b6', EndColorStr='#494');
 		border: 1px solid #070;
 		color: #fff !important;
-		text-shadow: 0 1px 0 rgba(0,0,0,.8);
-
+		@include text-shadow(0 1px 0 rgba(0,0,0,.8));
 		&:hover {
 			background-color: #5a5;
-			background-image: -webkit-linear-gradient(top, #6c6, #5a5);
-			background-image: -moz-linear-gradient(top, #6c6, #5a5);
-			background-image: -ms-linear-gradient(top, #6c6, #5a5);
-			background-image: -o-linear-gradient(top, #6c6, #5a5);
-			background-image: linear-gradient(to bottom, #6c6, #5a5);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#66cc66', EndColorStr='#55aa55');
+			@include background-image(linear-gradient(top, #6c6, #5a5));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#6c6', EndColorStr='#5a5');
 		}
-
 		&:active {
 			box-shadow: 2px 2px 3px rgba(0,0,0,.2) inset;
 			background-color: #484;
-			background-image: -webkit-linear-gradient(top, #6a6, #484);
-			background-image: -moz-linear-gradient(top, #6a6, #484);
-			background-image: -ms-linear-gradient(top, #6a6, #484);
-			background-image: -o-linear-gradient(top, #6a6, #484);
-			background-image: linear-gradient(to bottom, #6a6, #484);
+			@include background-image(linear-gradient(top, #6a6, #484));
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#66aa66', EndColorStr='#448844');
 		}
-
 		&:focus {
 			outline: 0;
 			background: #6c6;
@@ -336,47 +286,29 @@
 	}
 
 	/* Button color scheme: warning */
-
 	.ym-button.ym-warning,
 	.ym-form button.ym-warning,
 	.ym-form input[type="button"].ym-warning,
 	.ym-form input[type="reset"].ym-warning,
 	.ym-form input[type="submit"].ym-warning {
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
+		@include box-shadow(0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15));
 		background-color: #b72;
-		background-image: -webkit-linear-gradient(top, #da4, #b72);
-		background-image: -moz-linear-gradient(top, #da4, #b72);
-		background-image: -ms-linear-gradient(top, #da4, #b72);
-		background-image: -o-linear-gradient(top, #da4, #b72);
-		background-image: linear-gradient(to bottom, #da4, #b72);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ddaa44', EndColorStr='#BB7722');
+		@include background-image(linear-gradient(top, #da4, #b72));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#da4', EndColorStr='#b72');
 		border: 1px solid #970;
 		color: #fff !important;
-		text-shadow: 0 1px 0 rgba(0,0,0,.8);
-
+		@include text-shadow(0 1px 0 rgba(0,0,0,.8));
 		&:hover {
 			background-color: #c83;
-			background-image: -webkit-linear-gradient(top, #eb5, #c83);
-			background-image: -moz-linear-gradient(top, #eb5, #c83);
-			background-image: -ms-linear-gradient(top, #eb5, #c83);
-			background-image: -o-linear-gradient(top, #eb5, #c83);
-			background-image: linear-gradient(to bottom, #eb5, #c83);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eebb55', EndColorStr='#cc8833');
+			@include background-image(linear-gradient(top, #eb5, #c83));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eb5', EndColorStr='#c83');
 		}
-
 		&:active {
-			box-shadow: 2px 2px 3px rgba(0,0,0,.2) inset;
+			@include box-shadow(2px 2px 3px rgba(0,0,0,.2) inset);
 			background-color: #a62;
-			background-image: -webkit-linear-gradient(top, #c94, #a62);
-			background-image: -moz-linear-gradient(top, #c94, #a62);
-			background-image: -ms-linear-gradient(top, #c94, #a62);
-			background-image: -o-linear-gradient(top, #c94, #a62);
-			background-image: linear-gradient(to bottom, #c94, #a62);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cc9944', EndColorStr='#aa6622');
+			@include background-image(linear-gradient(top, #c94, #a62));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#c94', EndColorStr='#a62');
 		}
-
 		&:focus {
 			outline: 0;
 			background: #da4;
@@ -384,68 +316,50 @@
 	}
 
 	/* Button color scheme: danger */
-
 	.ym-button.ym-danger,
 	.ym-form button.ym-danger,
 	.ym-form input[type="button"].ym-danger,
 	.ym-form input[type="reset"].ym-danger,
 	.ym-form input[type="submit"].ym-danger {
-		-webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		-moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
-		box-shadow: 0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15);
+		@include box-shadow(0 0 1px 1px rgba(255,255,255,.3) inset, 0 1px 0 rgba(0,0,0,.15));
 		background-color: #944;
-		background-image: -webkit-linear-gradient(top, #b66, #944);
-		background-image: -moz-linear-gradient(top, #b66, #944);
-		background-image: -ms-linear-gradient(top, #b66, #944);
-		background-image: -o-linear-gradient(top, #b66, #944);
-		background-image: linear-gradient(to bottom, #b66, #944);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bb6666', EndColorStr='#994444');
+		@include background-image(linear-gradient(top, #b66, #944));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#b66', EndColorStr='#944');
 		border: 1px solid #700;
 		color: #fff !important;
-		text-shadow: 0 1px 0 rgba(0,0,0,.8);
-
+		@include text-shadow(0 1px 0 rgba(0,0,0,.8));
 		&:hover {
 			background-color: #a55;
-			background-image: -webkit-linear-gradient(top, #c66, #a55);
-			background-image: -moz-linear-gradient(top, #c66, #a55);
-			background-image: -ms-linear-gradient(top, #c66, #a55);
-			background-image: -o-linear-gradient(top, #c66, #a55);
-			background-image: linear-gradient(to bottom, #c66, #a55);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cc6666', EndColorStr='#aa5555');
+			@include background-image(linear-gradient(top, #c66, #a55));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#c66', EndColorStr='#a55');
 		}
-
 		&:active {
 			box-shadow: 2px 2px 3px rgba(0,0,0,.2) inset;
 			background-color: #844;
-			background-image: -webkit-linear-gradient(top, #a55, #844);
-			background-image: -moz-linear-gradient(top, #a55, #844);
-			background-image: -ms-linear-gradient(top, #a55, #844);
-			background-image: -o-linear-gradient(top, #a55, #844);
-			background-image: linear-gradient(to bottom, #a55, #844);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#aa5555', EndColorStr='#884444');
+			@include background-image(linear-gradient(top, #a55, #844));
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#a55', EndColorStr='#844');
 		}
-
 		&:focus {
 			outline: 0;
 			background: #c66;
 		}
 	}
 
-	/* pseudo elements don't work on input */
-	.ym-form button:before,
-	.ym-button:before {
-		background: #ccc;
-		background: rgba(0,0,0,.1);
-		float: left;
-		width: 1em;
-		text-align: center;
-		font-size: 1.5em;
-		margin: 0 1em 0 -1em;
-		padding: 0 .2em;
-		-webkit-box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
-		box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
-		border-radius: .15em 0 0 .15em;
-		pointer-events: none;
+	// pseudo elements don't work on input
+	.ym-form button, .ym-button{
+		&:before {
+			background: #ccc;
+			background: rgba(0,0,0,.1);
+			float: left;
+			width: 1em;
+			text-align: center;
+			font-size: 1.5em;
+			margin: 0 1em 0 -1em;
+			padding: 0 .2em;
+			@include box-shadow(1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5));
+			@include border-radius(.15em 0 0 .15em);
+			pointer-events: none;
+		}
 	}
 
 	.ym-add:before { content: "\271A"; }
@@ -462,17 +376,17 @@
 	.ym-support:before { content: "\2706"; }
 	.ym-star:before { content: "\2605"; }
 
-	/* removes extra inner spacing in Firefox */
+	// removes extra inner spacing in Firefox
 	.ym-form button::-moz-focus-inner {
 		border: 0;
 		padding: 0;
 	}
 
-	/* If line-height can't be modified, then fix Firefox spacing with padding */
-	.ym-form input[type=button]::-moz-focus-inner,
-	.ym-form input[type=reset]::-moz-focus-inner,
-	.ym-form input[type=submit]::-moz-focus-inner {
-		padding: .4em;
+	// If line-height can't be modified, then fix Firefox spacing with padding
+	.ym-form input{
+		&[type=button], &[type=reset], &[type=submit] {
+			&::-moz-focus-inner { padding: .4em; }
+		}
 	}
 
 	/* The disabled styles */
@@ -490,10 +404,9 @@
 		color: #aaa !important;
 		border-color: #aaa;
 		cursor: default;
-		text-shadow: none;
+		@include text-shadow(none);
 		position: static;
-		-webkit-box-shadow: none;
-		box-shadow: none;
+		@include box-shadow(none);
 	}
 
 	/* ie6 support styles - redefined buttons, because of missing support for attribute selectors */
@@ -503,7 +416,7 @@
 			display: inline-block;
 			white-space: nowrap;
 			background-color: #ccc;
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eee', EndColorStr='#ccc');
 			border: 1px solid #777;
 			color: #333 !important;
 			cursor: pointer;
@@ -512,35 +425,30 @@
 			padding: 0 1.5em;
 			overflow: visible; /* removes extra side spacing in IE */
 			text-decoration: none !important;
+			&:focus {
+				outline: 0;
+				background: #fafafa;
+			}
+			&:hover {
+				background-color: #ddd;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#ddd');
+			}
+			&:active {
+				background-color: #bbb;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccc', EndColorStr='#bbb');
+				position: relative;
+				top: 1px;
+			}
 		}
-
-		.ym-form button:focus,
-		.ym-button:focus {
-			outline: 0;
-			background: #fafafa;
-		}
-
-		.ym-form button:hover,
-		.ym-button:hover {
-			background-color: #ddd;
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
-		}
-
-		.ym-form button:active,
-		.ym-button:active {
-			background-color: #bbb;
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#cccccc', EndColorStr='#bbbbbb');
-			position: relative;
-			top: 1px;
-		}
-		.ym-button.ym-disabled,
-		.ym-button.ym-disabled:hover {
-			background: #eee;
-			color: #aaa !important;
-			border-color: #aaa;
-			cursor: default;
-			text-shadow: none;
-			position: static;
+		.ym-button {
+			&.ym-disabled, &.ym-disabled:hover {
+				background: #eee;
+				color: #aaa !important;
+				border-color: #aaa;
+				cursor: default;
+				@include text-shadow(none);
+				position: static;
+			}
 		}
 	}
 }
